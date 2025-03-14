@@ -1,0 +1,19 @@
+:root {
+  /* Dark */
+  --dark-background: #0e0e26;
+  --medium: #1a1a3f;
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  --medium-gradient: #181846;
+
+  /* Text */
+  --light: #f6f8fc;
+  --gray: #b0b3c1;
+
+  --chip-background: rgba(2, 118, 219, 0.1);
+
+  /* Palette */
+  --primary: #0054e9;
+  --accent: #1e91ff;
+  --accent-light: #83d0ff;
+}
