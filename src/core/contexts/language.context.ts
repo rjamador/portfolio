@@ -1,12 +1,13 @@
 import React, { createContext, useContext } from "react";
+import { Language } from "../models/data.model";
 
 interface LanguageContextProps {
-  language: string
-  setLanguage: React.Dispatch<React.SetStateAction<string>>
+  language: Language
+  setLanguage: React.Dispatch<React.SetStateAction<Language>>
 }
 
 export const LanguageContext = createContext<LanguageContextProps>({
-  language: '',
+  language: 'es',
   setLanguage: () => { }
 })
 

@@ -6,7 +6,7 @@ import Main from '../core/layout/main'
 export const Route = createRootRoute({
   component: (): React.JSX.Element => (
     <>
-      <div id="app" className="lg:max-w-screen-xl lg:px-12 min-h-screen mx-auto">
+      <div id="app" className="lg:max-w-[80vw] lg:px-8 max-lg:py-4 max-w-[90vw] min-h-screen mx-auto">
         <div className="lg:flex lg:justify-between lg:gap-4">
           <Header />
           <Main>

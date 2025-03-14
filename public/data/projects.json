@@ -1,0 +1,28 @@
+{
+  "data": {
+    "en": [
+      {
+        "name": "Starpay",
+        "description": "A very small project I made while I was learning how to play Stardew Valley",
+        "stack": ["Angular"]
+      },
+      {
+        "name": "Coinflow",
+        "description": "Coinflow is an application developed as a personal learning project to simplify budgeting and track expenses with a friendly financial management.",
+        "stack": ["React Native", "Expo", "PostgreSQL", "Supabase"]
+      }
+    ],
+    "es": [
+      {
+        "name": "Starpay",
+        "description": "Un pequeño proyecto que hice mientras aprendía a jugar Stardew Valley",
+        "stack": ["Angular"]
+      },
+      {
+        "name": "Coinflow",
+        "description": "Coinflow es una aplicación desarrollada como un proyecto personal de aprendizaje para simplificar la plafinicación de presupuestos con una gestión amigable.",
+        "stack": ["React Native", "Expo", "PostgreSQL", "Supabase"]
+      }
+    ]
+  }
+}

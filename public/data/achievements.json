@@ -1,0 +1,40 @@
+{
+  "data": {
+    "en": [
+      {
+        "company": "Fundación Movicáncer",
+        "position": "Front-End Development Leader",
+        "startDate": "2023",
+        "endDate": null,
+        "description": "In charge of the development of the web application and services for the new version of the national cancer tracking and prevention system, enhancing its functionality and performance.",
+        "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
+      },
+      {
+        "company": "EXPEDOC",
+        "position": "Frontend Developer",
+        "startDate": "2022",
+        "endDate": "2023",
+        "description": "A web application designed for the Department of Education that manages the academic and professional records of the faculty at the Central American University.",
+        "stack": ["ASP.NET", "Microsoft SQL"]
+      }
+    ],
+    "es": [
+      {
+        "company": "Fundación Movicáncer",
+        "position": "Líder de Desarrollo Front-End",
+        "startDate": "2023",
+        "endDate": null,
+        "description": "Encargado del desarrollo de la aplicación web y servicios para la nueva versión del sistema nacional de seguimiento y prevención del cáncer, mejorando su funcionalidad y rendimiento.",
+        "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
+      },
+      {
+        "company": "EXPEDOC",
+        "position": "Desarrollador Frontend",
+        "startDate": "2022",
+        "endDate": "2023",
+        "description": "Una aplicación web diseñada para el departamento de educación que gestiona los registros académicos y profesionales del profesorado de la Universidad Centroamericana.",
+        "stack": ["ASP.NET", "Microsoft SQL"]
+      }
+    ]
+  }
+}
