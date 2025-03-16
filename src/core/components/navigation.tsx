@@ -1,42 +1,61 @@
 import { Link, useLocation, useNavigate } from "@tanstack/react-router";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useLanguage } from "../contexts/language.context";
+import { Language } from "../models/data.model";
 
-interface Route {
-  title: string
-  url: string
-  keymap: string
+type KeyMappings = Record<Language, Record<string, string>>
+type RouteMapping = Record<Language, Route[]>
+
+interface Route { title: string, url: string, keymap: string }
+
+const routes: RouteMapping = {
+  ['es']: [
+    { title: 'sobre mí', url: '/', keymap: 's' },
+    { title: 'experiencia', url: '/experience', keymap: 'e' },
+    { title: 'proyectos', url: '/projects', keymap: 'p' }
+  ],
+  ['en']: [
+    { title: 'about me', url: '/', keymap: 'a' },
+    { title: 'experience', url: '/experience', keymap: 'e' },
+    { title: 'projects', url: '/projects', keymap: 'p' }
+  ]
 }
 
-const routes: Route[] = [
-  { title: 'sobre mí', url: '/', keymap: 's' },
-  { title: 'experiencia', url: '/experience', keymap: 'e' },
-  { title: 'proyectos', url: '/projects', keymap: 'p' },
-]
-
-const keyMappings: Record<string, string> = {
-  ['s']: "/",
-  ['e']: "/experience",
-  ['p']: "/projects",
+const keyMappings: KeyMappings = {
+  ['es']: {
+    ['s']: "/",
+    ['e']: "/experience",
+    ['p']: "/projects"
+  },
+  ['en']: {
+    ['a']: "/",
+    ['e']: "/experience",
+    ['p']: "/projects"
+  }
 }
 
 export default function Navigation(): React.JSX.Element {
   const location = useLocation()
   const navigate = useNavigate()
+
   const [hoveredItem, setHoveredItem] = useState<number | null>(null)
+  const { language } = useLanguage()
 
   useEffect(() => {
     const keyPressHandler = (event: KeyboardEvent): void => {
-      const url: string = keyMappings[event.key]
-      if (url) navigate({ to: url })
+      if (keyMappings[language]) {
+        const url: string = keyMappings[language][event.key];
+        if (url) navigate({ to: url })
+      }
     }
 
     window.addEventListener('keydown', keyPressHandler)
     return () => window.removeEventListener('keydown', keyPressHandler)
-  }, [navigate])
+  }, [navigate, language])
 
   return (
     <ul className="flex flex-col gap-[0.6rem]">
-      {routes.map(({ title, url, keymap }, index: number) => (
+      {routes[language].map(({ title, url, keymap }, index: number) => (
         <li
           data-item={`item-${index}`}
           key={index}

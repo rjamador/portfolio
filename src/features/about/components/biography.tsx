@@ -6,7 +6,7 @@ interface BiographyProps {
 }
 
 const pageTranslation = {
-  es: {
+  ['es']: {
     title: 'Biografía',
     content: [
       'Soy un estudiante de Ingeniería en Sistemas de Información de 21 años de Managua, Nicaragua, con una gran pasión por las tecnologías web.',
@@ -16,7 +16,7 @@ const pageTranslation = {
       'Mi conjunto de habilidades técnicas incluye un sólido entendimiento de los principios de diseño UI/UX, sistemas de control de versiones como Git y conocimiento de patrones de diseño.'
     ]
   },
-  en: {
+  ['en']: {
     title: 'Biography',
     content: [
       'I am a 21-year-old Information Systems Engineering student from Managua, Nicaragua, with a strong passion for web technologies.',
@@ -33,11 +33,13 @@ export default function Biography({ language }: BiographyProps): React.JSX.Eleme
 
   return (
     <div>
-      <h2>{translation('title')}</h2>
+      <h2 className="font-bold">{translation('title')}</h2>
 
-      {translation('content').map((paragraph: string, index: number) => (
-        <p key={index}>{paragraph}</p>
-      ))}
+      <div className="flex flex-col gap-4 text-[var(--gray)]">
+        {translation('content').map((paragraph: string, index: number) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
     </div>
   )
 }
