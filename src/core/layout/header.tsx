@@ -28,7 +28,7 @@ export default function Header(): React.JSX.Element {
   const { language } = useLanguage()
 
   return (
-    <header className="lg:w-full lg:max-h-screen lg:sticky lg:py-16 max-lg:gap-8 flex flex-col justify-between">
+    <header className="lg:w-full lg:max-h-screen lg:top-0 lg:sticky lg:py-16 max-lg:gap-8 flex flex-col justify-between">
       <div>
         <div>
           <h1 className="lg:text-[3rem] font-bold">Roberto Amador</h1>
