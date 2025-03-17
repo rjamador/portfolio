@@ -1,6 +1,4 @@
-import { SVGProps } from "react";
-
-export function Angular(props: SVGProps<SVGSVGElement>) {
+export function Angular(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +7,7 @@ export function Angular(props: SVGProps<SVGSVGElement>) {
       height="24px"
       {...props}
     >
+      <title>Angular</title>
       <linearGradient
         id="deviconAngular0"
         x1="14.704"

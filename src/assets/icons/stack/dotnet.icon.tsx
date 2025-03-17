@@ -1,6 +1,4 @@
-import { SVGProps } from "react";
-
-export function Dotnet(props: SVGProps<SVGSVGElement>) {
+export function Dotnet(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +7,7 @@ export function Dotnet(props: SVGProps<SVGSVGElement>) {
       height="24px"
       {...props}
     >
+      <title>Dotnet</title>
       <g fill="none">
         <rect width="256" height="256" fill="#512BD4" rx="60"></rect>
         <path

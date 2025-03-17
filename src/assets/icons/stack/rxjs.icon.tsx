@@ -1,6 +1,4 @@
-import { SVGProps } from "react";
-
-export function Rxjs(props: SVGProps<SVGSVGElement>) {
+export function Rxjs(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +7,7 @@ export function Rxjs(props: SVGProps<SVGSVGElement>) {
       height="24px"
       {...props}
     >
+      <title>RxJS</title>
       <defs>
         <linearGradient
           id="deviconRxjs0"

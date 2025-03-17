@@ -1,6 +1,4 @@
-import { SVGProps } from "react";
-
-export function Angularmaterial(props: SVGProps<SVGSVGElement>) {
+export function Angularmaterial(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +7,7 @@ export function Angularmaterial(props: SVGProps<SVGSVGElement>) {
       height="24px"
       {...props}
     >
+      <title>Angular Material</title>
       <path
         fill="#ffa726"
         d="M63.934.656L5.25 21.66l8.863 77.719l49.82 27.77l49.887-27.77l9.059-77.719Zm0 0"

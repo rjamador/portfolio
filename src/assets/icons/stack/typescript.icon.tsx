@@ -1,6 +1,4 @@
-import { SVGProps } from "react";
-
-export function Typescript(props: SVGProps<SVGSVGElement>) {
+export function Typescript(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +7,7 @@ export function Typescript(props: SVGProps<SVGSVGElement>) {
       height="24px"
       {...props}
     >
+      <title>Typescript</title>
       <g fill="none">
         <rect width="256" height="256" fill="#007ACC" rx="60"></rect>
         <path

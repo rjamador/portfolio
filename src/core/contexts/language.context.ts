@@ -1,9 +1,9 @@
-import { createContext, useContext } from "react";
+import { createContext, Dispatch, SetStateAction, useContext } from "react";
 import { Language } from "../models/data.model";
 
 interface LanguageContextProps {
   language: Language
-  setLanguage: React.Dispatch<React.SetStateAction<Language>>
+  setLanguage: Dispatch<SetStateAction<Language>>
 }
 
 export const LanguageContext = createContext<LanguageContextProps>({

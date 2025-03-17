@@ -44,7 +44,7 @@ export default function Navigation(): React.JSX.Element {
   useEffect(() => {
     const keyPressHandler = (event: KeyboardEvent): void => {
       if (keyMappings[language]) {
-        const url: string = keyMappings[language][event.key];
+        const url: string = keyMappings[language][event.key]
         if (url) navigate({ to: url })
       }
     }
