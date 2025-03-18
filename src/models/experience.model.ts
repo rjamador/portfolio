@@ -1,4 +1,4 @@
-export interface Achievement {
+export interface Experience {
   place: string
   position: string
   startDate: Date

@@ -2,7 +2,7 @@
   "data": {
     "en": [
       {
-        "company": "Fundación Movicáncer",
+        "place": "Fundación Movicáncer",
         "position": "Front-End Development Leader",
         "startDate": "2023",
         "endDate": null,
@@ -10,7 +10,7 @@
         "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
       },
       {
-        "company": "EXPEDOC",
+        "place": "EXPEDOC",
         "position": "Frontend Developer",
         "startDate": "2022",
         "endDate": "2023",
@@ -20,7 +20,7 @@
     ],
     "es": [
       {
-        "company": "Fundación Movicáncer",
+        "place": "Fundación Movicáncer",
         "position": "Líder de Desarrollo Front-End",
         "startDate": "2023",
         "endDate": null,
@@ -28,7 +28,7 @@
         "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
       },
       {
-        "company": "EXPEDOC",
+        "place": "EXPEDOC",
         "position": "Desarrollador Frontend",
         "startDate": "2022",
         "endDate": "2023",

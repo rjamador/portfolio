@@ -4,11 +4,13 @@ import { Language } from "../models/data.model";
 interface LanguageContextProps {
   language: Language
   setLanguage: Dispatch<SetStateAction<Language>>
+  isSpanish: boolean
 }
 
 export const LanguageContext = createContext<LanguageContextProps>({
   language: 'es',
-  setLanguage: () => { }
+  setLanguage: () => { },
+  isSpanish: true
 })
 
 export const useLanguage = () => useContext(LanguageContext)

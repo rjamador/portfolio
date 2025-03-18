@@ -5,8 +5,6 @@ export const Route = createFileRoute('/experience')({
   component: RouteComponent,
 })
 
-function RouteComponent() {
-  return (
-    <Experience />
-  )
+function RouteComponent(): React.JSX.Element {
+  return <Experience />
 }

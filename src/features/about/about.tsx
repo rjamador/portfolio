@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useLanguage } from "../../core/contexts/language.context";
 import useTranslation from "../../core/hooks/useTranslations";
 import { Angular, Angularmaterial, Cake, Dotnet, Location, Postgresql, React, Rxjs, Tailwindcss, Typescript } from "../../assets/icons";
@@ -32,12 +31,9 @@ function currentAge(): number {
 }
 
 export default function About(): React.JSX.Element {
-  const { language } = useLanguage()
 
+  const { language, isSpanish } = useLanguage()
   const translation = useTranslation(language, pageTranslation)
-  const [isSpanish, setIsSpanish] = useState<boolean>()
-
-  useEffect((): void => setIsSpanish(language === 'es'), [language])
 
   return (
     <>
