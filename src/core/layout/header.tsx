@@ -42,7 +42,7 @@ export default function Header(): React.JSX.Element {
           <p>{pageTranslation[language]['content']}</p>
         </div>
 
-        <div className="flex gap-4 mt-4">
+        <div className="lg:mt-8 flex gap-4 mt-4">
           {socialIcons.map(({ Icon }, index: number) => (
             <Icon key={index} />
           ))}

@@ -2,6 +2,7 @@ import { useLanguage } from "../../core/contexts/language.context"
 import { Experience as IExperience } from "../../models/experience.model"
 import { Data, Language } from "../../core/models/data.model"
 import { useQuery } from "@tanstack/react-query"
+import Chip from "../../components/chip"
 
 function fetchExperience(language: Language): Promise<IExperience[]> {
   return fetch('/data/experience.json')
@@ -10,7 +11,6 @@ function fetchExperience(language: Language): Promise<IExperience[]> {
 }
 
 export default function Experience(): React.JSX.Element {
-
   const { isSpanish, language } = useLanguage()
 
   const { data } = useQuery({
@@ -24,7 +24,7 @@ export default function Experience(): React.JSX.Element {
     <>
       <ul className="flex flex-col gap-4">
         {data?.map((experience: IExperience): React.JSX.Element => ((
-          <li className="lg:grid lg:grid-cols-4 flex max-lg:flex-col">
+          <li key={experience.place} className="lg:grid lg:grid-cols-4 flex max-lg:flex-col">
             <div className="lg:col-span-1">
               <span className="text-sm text-[var(--gray)]">{`${experience.startDate} - ${experience.endDate ?? (isSpanish ? 'Presente' : 'Present')}`}</span>
             </div>
@@ -35,7 +35,15 @@ export default function Experience(): React.JSX.Element {
               </div>
               <p>{experience.description}</p>
 
-              {/* Faltan los chips del stack */}
+              <ul className="flex flex-wrap gap-2 mt-3.5">
+                {experience.stack.map((stack: string): React.JSX.Element => (
+                  <li key={stack}>
+                    <Chip>
+                      <span className="text-sm">{stack}</span>
+                    </Chip>
+                  </li>
+                ))}
+              </ul>
             </div>
           </li>
         )))}
