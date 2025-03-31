@@ -12,8 +12,11 @@ import { Tailwindcss } from "./stack/tailwind.icon";
 import { Rxjs } from "./stack/rxjs.icon";
 import { Angularmaterial } from "./stack/angular-material.icon";
 import { React } from "./stack/react.icon";
+
 import { ChevronDown } from "./chevron-down.icon";
 import { ChevronUp } from "./chevron-up.icon";
+import { Spinner } from "./spinner";
+
 
 export {
   Github,
@@ -21,8 +24,10 @@ export {
   Pdf,
   Cake,
   Location,
+
   ChevronDown,
   ChevronUp,
+  Spinner,
 
   // Stack
   Typescript,

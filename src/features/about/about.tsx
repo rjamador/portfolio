@@ -31,7 +31,6 @@ function currentAge(): number {
 }
 
 export default function About(): React.JSX.Element {
-
   const { language, isSpanish } = useLanguage()
   const translation = useTranslation(language, pageTranslation)
 
@@ -69,7 +68,7 @@ export default function About(): React.JSX.Element {
         {/* Revisar las fuentes responsivas */}
         <div className="flex flex-col gap-6">
           <Box>
-            <h3 className="text-xl font-semibold text-[var(--accent)] mb-3">
+            <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">
               {isSpanish ? 'Lenguajes' : 'Programming languages'}
             </h3>
             <div className="flex gap-4 items-center">
@@ -79,7 +78,7 @@ export default function About(): React.JSX.Element {
           </Box>
 
           <Box>
-            <h3 className="text-xl font-semibold text-[var(--accent)] mb-3">
+            <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">
               {isSpanish ? 'Librerías' : 'Libraries'}
             </h3>
             <div className="flex gap-4 items-center">
@@ -90,7 +89,7 @@ export default function About(): React.JSX.Element {
           </Box>
 
           <Box>
-            <h3 className="text-xl font-semibold text-[var(--accent)] mb-3">Frameworks</h3>
+            <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">Frameworks</h3>
             <div className="flex gap-4 items-center">
               <Tailwindcss />
               <Dotnet />

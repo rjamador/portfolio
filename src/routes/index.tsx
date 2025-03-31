@@ -1,12 +1,17 @@
 import { createFileRoute } from '@tanstack/react-router'
-import About from '../features/about/about'
+import { lazy, Suspense } from 'react'
+import Loading from '../components/loading'
 
 export const Route = createFileRoute('/')({
   component: Index,
 })
 
+const LazyAbout = lazy(() => import('../features/about/about'))
+
 function Index(): React.JSX.Element {
   return (
-    <About />
+    <Suspense fallback={<Loading />}>
+      <LazyAbout />
+    </Suspense>
   )
 }
