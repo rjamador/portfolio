@@ -5,11 +5,11 @@ import { lazy, Suspense } from 'react'
 import Loading from '../components/loading'
 import { fetchExperience, Experience } from '../modules/experience'
 
-const LazyExperience = lazy(() => import('../features/experience/experience'))
-
 export const Route = createLazyFileRoute('/experience')({
   component: RouteComponent
 })
+
+const LazyExperience = lazy(() => import('../features/experience'))
 
 function RouteComponent(): React.JSX.Element {
   const { language, isSpanish } = useLanguage()

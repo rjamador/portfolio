@@ -1,15 +1,15 @@
-import { Experience as IExperience } from "../../modules/experience/models/experience.model"
-import Chip from "../../components/chip"
+import Chip from "../components/chip"
+import type { Experience } from "../modules/experience"
 
 interface ExperienceProps {
-  data: IExperience[] | undefined
+  data: Experience[] | undefined
   isSpanish: boolean
 }
 
 export default function Experience({ data, isSpanish }: ExperienceProps): React.JSX.Element {
   return (
     <ul className="flex flex-col gap-4">
-      {data?.map((experience: IExperience): React.JSX.Element => ((
+      {data?.map((experience: Experience): React.JSX.Element => ((
         <li key={experience.place} className="lg:grid lg:grid-cols-4 flex max-lg:flex-col">
           <div className="lg:col-span-1">
             <span className="text-sm text-[var(--gray)]">{`${experience.startDate} - ${experience.endDate ?? (isSpanish ? 'Presente' : 'Present')}`}</span>

@@ -6,7 +6,7 @@ export const Route = createFileRoute('/')({
   component: Index,
 })
 
-const LazyAbout = lazy(() => import('../features/about/about'))
+const LazyAbout = lazy(() => import('../features/about'))
 
 function Index(): React.JSX.Element {
   return (
