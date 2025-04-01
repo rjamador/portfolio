@@ -1,7 +1,7 @@
 import { useLanguage } from "../../core/contexts/language.context";
 import useTranslation from "../../core/hooks/useTranslations";
 import { Angular, Angularmaterial, Cake, Dotnet, Location, Postgresql, React, Rxjs, Tailwindcss, Typescript } from "../../assets/icons";
-import Box from "./components/box";
+import Box from "../../components/box";
 
 const pageTranslation = {
   ['es']: {

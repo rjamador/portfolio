@@ -1,4 +1,4 @@
-import { Experience as IExperience } from "../../models/experience.model"
+import { Experience as IExperience } from "../../modules/experience/models/experience.model"
 import Chip from "../../components/chip"
 
 interface ExperienceProps {
