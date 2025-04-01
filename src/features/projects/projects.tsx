@@ -1,35 +1,17 @@
-import { useQuery } from "@tanstack/react-query";
-import { useLanguage } from "../../core/contexts/language.context";
 import { Project } from "../../models/project.model";
-import { Data, Language } from "../../core/models/data.model";
 import Card from "../../components/card";
 import { ChevronDown, ChevronUp, Github } from "../../assets/icons";
 
-const imageMapping: Record<string, string> = {
-  ['Starpay']: '/webp/starpay.webp',
-  ['Coinflow']: '/webp/coinflow.webp'
+interface ProjectsProps {
+  data: Project[] | undefined
+  isSpanish: boolean
 }
 
-function fetchProjects(language: Language): Promise<Project[]> {
-  return fetch('/data/projects.json')
-    .then((response: Response) => response.json())
-    .then((json: Data<Project[]>) => json.data[language].map((project): Project =>
-      ({ ...project, imagePath: imageMapping[project.name] })
-    ))
-}
-
-export default function Projects(): React.JSX.Element {
-  const { language, isSpanish } = useLanguage()
-
-  const { data } = useQuery({
-    queryKey: ['projects', language],
-    queryFn: () => fetchProjects(language)
-  })
-
+export default function Projects({ data, isSpanish }: ProjectsProps): React.JSX.Element {
   const cardHeader = (project: Project) => {
     return (isOpen: boolean): React.ReactNode => (
       <div className="flex items-center justify-between">
-        <img className="h-20 w-20" src={project.imagePath} alt={project.name} />
+        {/* <img className="h-20 w-20" src={project.imagePath} alt={project.name} /> */}
         <div className="flex gap-2 items-center">
           <h2 className="text-[1.75rem] font-bold">{project.name}</h2>
           {isOpen ? <ChevronUp className="size-5" /> : <ChevronDown className="size-5" />}

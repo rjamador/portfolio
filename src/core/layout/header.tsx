@@ -38,7 +38,7 @@ export default function Header(): React.JSX.Element {
           </div>
         </div>
 
-        <div className="lg:mt-8 lg:w-[20rem] text-justify text-[var(--gray)]">
+        <div className="lg:mt-8 lg:w-[20rem] mt-4 text-justify text-[var(--gray)]">
           <p>{pageTranslation[language]['content']}</p>
         </div>
 
