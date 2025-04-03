@@ -8,31 +8,26 @@
 // You should NOT make any changes in this file as it will be overwritten.
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
-import { createFileRoute } from '@tanstack/react-router'
-
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as ProjectsImport } from './routes/projects'
+import { Route as ExperienceImport } from './routes/experience'
 import { Route as IndexImport } from './routes/index'
-
-// Create Virtual Routes
-
-const ProjectsLazyImport = createFileRoute('/projects')()
-const ExperienceLazyImport = createFileRoute('/experience')()
 
 // Create/Update Routes
 
-const ProjectsLazyRoute = ProjectsLazyImport.update({
+const ProjectsRoute = ProjectsImport.update({
   id: '/projects',
   path: '/projects',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/projects.lazy').then((d) => d.Route))
+} as any)
 
-const ExperienceLazyRoute = ExperienceLazyImport.update({
+const ExperienceRoute = ExperienceImport.update({
   id: '/experience',
   path: '/experience',
   getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/experience.lazy').then((d) => d.Route))
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -55,14 +50,14 @@ declare module '@tanstack/react-router' {
       id: '/experience'
       path: '/experience'
       fullPath: '/experience'
-      preLoaderRoute: typeof ExperienceLazyImport
+      preLoaderRoute: typeof ExperienceImport
       parentRoute: typeof rootRoute
     }
     '/projects': {
       id: '/projects'
       path: '/projects'
       fullPath: '/projects'
-      preLoaderRoute: typeof ProjectsLazyImport
+      preLoaderRoute: typeof ProjectsImport
       parentRoute: typeof rootRoute
     }
   }
@@ -72,21 +67,21 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/experience': typeof ExperienceLazyRoute
-  '/projects': typeof ProjectsLazyRoute
+  '/experience': typeof ExperienceRoute
+  '/projects': typeof ProjectsRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/experience': typeof ExperienceLazyRoute
-  '/projects': typeof ProjectsLazyRoute
+  '/experience': typeof ExperienceRoute
+  '/projects': typeof ProjectsRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
-  '/experience': typeof ExperienceLazyRoute
-  '/projects': typeof ProjectsLazyRoute
+  '/experience': typeof ExperienceRoute
+  '/projects': typeof ProjectsRoute
 }
 
 export interface FileRouteTypes {
@@ -100,14 +95,14 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ExperienceLazyRoute: typeof ExperienceLazyRoute
-  ProjectsLazyRoute: typeof ProjectsLazyRoute
+  ExperienceRoute: typeof ExperienceRoute
+  ProjectsRoute: typeof ProjectsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ExperienceLazyRoute: ExperienceLazyRoute,
-  ProjectsLazyRoute: ProjectsLazyRoute,
+  ExperienceRoute: ExperienceRoute,
+  ProjectsRoute: ProjectsRoute,
 }
 
 export const routeTree = rootRoute
@@ -129,10 +124,10 @@ export const routeTree = rootRoute
       "filePath": "index.tsx"
     },
     "/experience": {
-      "filePath": "experience.lazy.tsx"
+      "filePath": "experience.tsx"
     },
     "/projects": {
-      "filePath": "projects.lazy.tsx"
+      "filePath": "projects.tsx"
     }
   }
 }

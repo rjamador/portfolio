@@ -1,15 +1,14 @@
-import { createLazyFileRoute } from '@tanstack/react-router'
-import { lazy, Suspense } from 'react'
+import { createFileRoute } from '@tanstack/react-router'
 import { useQuery } from '@tanstack/react-query'
 import Loading from '../components/loading'
-import { fetchRepositories, RepositoryDto } from '../modules/github'
+import { fetchRepositories, filteredRepositories, RepositoryDto } from '../modules/projects'
+import Projects from '../features/projects'
+import PageTransition from '../core/components/page-transition'
 
-export const Route = createLazyFileRoute('/projects')({
-  component: RouteComponent
+export const Route = createFileRoute('/projects')({
+  component: RouteComponent,
+  pendingComponent: () => <Loading />
 })
-
-const LazyProjects = lazy(() => import('../features/projects'))
-const filteredRepositories: string[] = ['Coinflow', 'Starpay', 'GymCheck', 'Perfumeria', 'GestorCitas', 'portfolio', 'Programatic', 'ClinicaAsp']
 
 function RouteComponent(): React.JSX.Element {
   const { data: repositories } = useQuery({
@@ -31,8 +30,8 @@ function RouteComponent(): React.JSX.Element {
   })
 
   return (
-    <Suspense fallback={<Loading />}>
-      <LazyProjects repositories={repositories} />
-    </Suspense>
+    <PageTransition>
+      <Projects repositories={repositories} />
+    </PageTransition>
   )
 }
