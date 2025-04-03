@@ -1,7 +1,7 @@
 import Box from "../components/box";
 import { Star } from "../assets/icons/star.icon";
 import { Fork } from "../assets/icons/fork.icon";
-import { RepositoryDto } from "../modules/github";
+import { RepositoryDto } from "../modules/projects";
 
 interface ProjectsProps {
   repositories: RepositoryDto[] | undefined

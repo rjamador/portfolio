@@ -11,7 +11,7 @@ export const Route = createFileRoute('/projects')({
 })
 
 function RouteComponent(): React.JSX.Element {
-  const { data: repositories } = useQuery({
+  const { data: repositories, isLoading } = useQuery({
     queryKey: ['repositories'],
     queryFn: async (): Promise<RepositoryDto[]> => {
       const response: RepositoryDto[] = await fetchRepositories('Papudog')
@@ -28,6 +28,10 @@ function RouteComponent(): React.JSX.Element {
         })
     }
   })
+
+  if (isLoading) { // Dos por si acaso XD
+    return <Loading />
+  }
 
   return (
     <PageTransition>
