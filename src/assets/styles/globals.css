@@ -33,10 +33,9 @@ h2 {
 h3 {
   font-size: 1rem; /* 16px */
 }
-span {
-  font-size: 1rem; /* 16px */
-}
-p {
+span,
+p,
+time {
   font-size: 1rem; /* 16px */
 }
 
@@ -60,10 +59,9 @@ a {
   h3 {
     font-size: 1.5rem; /* 24px */
   }
-  span {
-    font-size: 1.125rem; /* 18px */
-  }
-  p {
+  span,
+  p,
+  time {
     font-size: 1.125rem; /* 18px */
   }
 }

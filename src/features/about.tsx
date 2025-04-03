@@ -19,24 +19,24 @@ export default function About(): React.JSX.Element {
   const translation = useTranslation(language, aboutTranslations)
 
   return (
-    <>
-      <div className="flex gap-6 mb-4">
-        <div className="w-16">
-          <img className="rounded-full" src="/webp/github_profile.webp" alt="profile_image" />
-        </div>
+    <article>
+      <header className="flex gap-6 mb-4">
+        <figure className="w-16">
+          <img className="rounded-full" src="/webp/github_profile.webp" alt="Profile picture" width={64} height={64} />
+        </figure>
         <div className="flex flex-col justify-around">
           <div className="flex items-center gap-2">
-            <Cake />
-            <p className="text-[var(--gray)]">{`${isSpanish ? 'Abril' : 'April'}`} 9</p>
-            <div className="text-[var(--gray)]">|</div>
+            <Cake aria-hidden="true" />
+            <time dateTime="2003-04-09" className="text-[var(--gray)]">{`${isSpanish ? 'Abril' : 'April'}`} 9</time>
+            <div className="text-[var(--gray)]" aria-hidden="true">|</div>
             <p className="text-[var(--gray)]">{`${currentAge()} ${isSpanish ? 'años' : 'years old'}`}</p>
           </div>
           <div className="flex items-center gap-2">
-            <Location />
-            <p >Managua, Nicaragua</p>
+            <Location aria-hidden="true" />
+            <address className="not-italic">Managua, Nicaragua</address>
           </div>
         </div>
-      </div>
+      </header>
 
       <div className="flex flex-col gap-4 text-[var(--gray)]">
         {translation('content').map((paragraph: string, index: number) => (
@@ -44,26 +44,25 @@ export default function About(): React.JSX.Element {
         ))}
       </div>
 
-      <section className="mt-4">
-        <h2 className="text-2xl font-bold mb-6">
+      <section className="mt-4" aria-labelledby="stack-heading">
+        <h2 id="stack-heading" className="text-2xl font-bold mb-6">
           {isSpanish ? 'Stack de desarrollo' : 'Development stack'}
         </h2>
 
-        {/* Revisar las fuentes responsivas */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Box>
             <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">
               {isSpanish ? 'Lenguajes' : 'Languages'}
             </h3>
             <div className="flex flex-wrap gap-6 items-center">
-              <div className="flex flex-col items-center gap-2">
-                <Typescript className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">TypeScript</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Postgresql className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">PostgreSQL</span>
-              </div>
+              <figure className="flex flex-col items-center gap-2">
+                <Typescript className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">TypeScript</figcaption>
+              </figure>
+              <figure className="flex flex-col items-center gap-2">
+                <Postgresql className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">PostgreSQL</figcaption>
+              </figure>
             </div>
           </Box>
 
@@ -72,40 +71,40 @@ export default function About(): React.JSX.Element {
               {isSpanish ? 'Librerías' : 'Libraries'}
             </h3>
             <div className="flex flex-wrap gap-6 items-center">
-              <div className="flex flex-col items-center gap-2">
-                <React className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">React</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Rxjs className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">RxJS</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Angularmaterial className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">Angular Material</span>
-              </div>
+              <figure className="flex flex-col items-center gap-2">
+                <React className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">React</figcaption>
+              </figure>
+              <figure className="flex flex-col items-center gap-2">
+                <Rxjs className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">RxJS</figcaption>
+              </figure>
+              <figure className="flex flex-col items-center gap-2">
+                <Angularmaterial className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">Angular Material</figcaption>
+              </figure>
             </div>
           </Box>
 
           <Box>
             <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">Frameworks</h3>
             <div className="flex flex-wrap gap-6 items-center">
-              <div className="flex flex-col items-center gap-2">
-                <Tailwindcss className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">Tailwind CSS</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Dotnet className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">.NET</span>
-              </div>
-              <div className="flex flex-col items-center gap-2">
-                <Angular className="w-12 h-12 transition-transform hover:scale-110" />
-                <span className="text-sm">Angular</span>
-              </div>
+              <figure className="flex flex-col items-center gap-2">
+                <Tailwindcss className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">Tailwind CSS</figcaption>
+              </figure>
+              <figure className="flex flex-col items-center gap-2">
+                <Dotnet className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">.NET</figcaption>
+              </figure>
+              <figure className="flex flex-col items-center gap-2">
+                <Angular className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />
+                <figcaption className="text-sm">Angular</figcaption>
+              </figure>
             </div>
           </Box>
         </div>
       </section>
-    </>
+    </article>
   )
 }
