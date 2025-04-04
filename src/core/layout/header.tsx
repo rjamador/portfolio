@@ -3,8 +3,13 @@ import Navigation from "../components/navigation";
 import { Github, Linkedin, Pdf } from "../../assets/icons";
 import { useLanguage } from "../contexts/language.context";
 
-interface Icons {
-  Icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element
+const GITHUB_PROFILE: string = 'https://github.com/Papudog'
+const LINKED_IN: string = 'https://www.linkedin.com/in/roberto-amador-1590a629b/'
+const CV: string = '/public/Roberto Amador - CV.pdf'
+
+interface IconsHref {
+  Icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element,
+  href?: string
 }
 
 const pageTranslation = {
@@ -18,10 +23,10 @@ const pageTranslation = {
   }
 }
 
-const socialIcons: Icons[] = [
-  { Icon: Github },
-  { Icon: Linkedin },
-  { Icon: Pdf },
+const socialIcons: IconsHref[] = [
+  { Icon: Github, href: GITHUB_PROFILE },
+  { Icon: Linkedin, href: LINKED_IN },
+  { Icon: Pdf, href: CV },
 ]
 
 export default function Header(): React.JSX.Element {
@@ -43,8 +48,12 @@ export default function Header(): React.JSX.Element {
         </div>
 
         <div className="lg:mt-8 flex gap-4 mt-4">
-          {socialIcons.map(({ Icon }, index: number) => (
-            <Icon key={index} />
+          {socialIcons.map(({ Icon, href }, index: number) => (
+            <Icon
+              onClick={() => window.open(href, '_blank')}
+              className="cursor-pointer hover:scale-[105%] transition-all ease-in-out duration-200"
+              key={index}
+            />
           ))}
         </div>
       </div>
