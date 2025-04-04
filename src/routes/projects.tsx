@@ -1,16 +1,24 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useQuery } from '@tanstack/react-query'
 import Loading from '../components/loading'
-import { fetchRepositories, filteredRepositories, RepositoryDto } from '../modules/projects'
+import { fetchRepositories, filteredRepositories, RepositoryDto, useRepositories } from '../modules/projects'
 import Projects from '../features/projects'
 import PageTransition from '../core/components/page-transition'
+import { RepositoryProvider } from '../modules/projects/providers/repositories.provider'
+import { useEffect } from 'react'
 
 export const Route = createFileRoute('/projects')({
-  component: RouteComponent,
+  component: () => (
+    <RepositoryProvider>
+      <RouteComponent />
+    </RepositoryProvider>
+  ),
   pendingComponent: () => <Loading />
 })
 
 function RouteComponent(): React.JSX.Element {
+  const { setRepositories } = useRepositories()
+
   const { data: repositories, isLoading } = useQuery({
     queryKey: ['repositories'],
     queryFn: async (): Promise<RepositoryDto[]> => {
@@ -29,13 +37,19 @@ function RouteComponent(): React.JSX.Element {
     }
   })
 
-  if (isLoading) { // Dos por si acaso XD
+  useEffect((): void => {
+    if (repositories) {
+      setRepositories(repositories)
+    }
+  }, [repositories, setRepositories])
+
+  if (isLoading) {
     return <Loading />
   }
 
   return (
     <PageTransition>
-      <Projects repositories={repositories} />
+      <Projects />
     </PageTransition>
   )
 }

@@ -16,7 +16,9 @@ import { React } from "./stack/react.icon";
 import { ChevronDown } from "./chevron-down.icon";
 import { ChevronUp } from "./chevron-up.icon";
 import { Spinner } from "./spinner";
-
+import { Star } from "./star.icon";
+import { Fork } from "./fork.icon";
+import { GitRepository } from "./git-repository.icon";
 
 export {
   Github,
@@ -28,6 +30,9 @@ export {
   ChevronDown,
   ChevronUp,
   Spinner,
+  Star,
+  Fork,
+  GitRepository,
 
   // Stack
   Typescript,

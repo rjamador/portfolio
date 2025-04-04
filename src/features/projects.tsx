@@ -1,46 +1,55 @@
-import Box from "../components/box";
-import { Star } from "../assets/icons/star.icon";
-import { Fork } from "../assets/icons/fork.icon";
-import { RepositoryDto } from "../modules/projects";
+import { Fork, GitRepository, Star } from "../assets/icons";
+import { useLanguage } from "../core/contexts/language.context";
+import { ProjectList, useRepositories } from "../modules/projects";
 
-interface ProjectsProps {
-  repositories: RepositoryDto[] | undefined
-}
-
-const languageColors: Record<string, string> = {
-  ['TypeScript']: '#2b7489',
-  ['C#']: '#239120',
-  ['VB.NET']: '#945db7',
-  ['PHP']: '#4f5d95',
-  ['Java']: '#e76f00',
-}
-
-export default function Projects({ repositories }: ProjectsProps): React.JSX.Element {
+export default function Projects(): React.JSX.Element {
+  const { repositories } = useRepositories()
+  const { isSpanish } = useLanguage()
   return (
-    <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
-      {repositories?.map((repository: RepositoryDto, index: number): React.JSX.Element => (
-        <article key={index}>
-          <Box onClick={() => window.open(repository.svn_url, '_blank')} padding={{ y: 'py-4' }}>
-            <h2 className="text-xl font-semibold">{repository.name}</h2>
-            <div className="flex max-xl:flex-col-reverse gap-2 justify-between">
-              <div className="flex gap-2 items-center">
-                <div className="w-2 h-2 rounded-full" style={{ backgroundColor: languageColors[repository.language] }} />
-                <p>{repository.language}</p>
-              </div>
-              <div className="flex gap-2">
-                <div className="flex gap-1 items-center">
-                  <Star className="w-4 h-4" aria-hidden="true" />
-                  <p>{repository.stargazers_count}</p>
-                </div>
-                <div className="flex gap-1 items-center">
-                  <Fork className="w-4 h-4" aria-hidden="true" />
-                  <p>{repository.forks_count}</p>
-                </div>
-              </div>
-            </div>
-          </Box>
+    <>
+      <section className="w-full flex gap-6 items-center flex-wrap max-md:gap-2 my-4">
+        <article className="flex flex-col justify-center">
+          <div>
+            <p className="text-4xl font-semibold">
+              {repositories?.reduce((acc, repository) => acc + repository.stargazers_count, 0)}
+            </p>
+          </div>
+
+          <div className="flex gap-2 items-center">
+            <Star className="w-4 h-4" aria-hidden="true" />
+            <p className="text-sm text-[var(--gray)]">{isSpanish ? 'Estrellas' : 'Total stars'}</p>
+          </div>
         </article>
-      ))}
-    </section>
+
+        <article className="flex flex-col justify-center">
+          <div>
+            <p className="text-4xl font-semibold">
+              {repositories?.reduce((acc, repository) => acc + repository.forks_count, 0)}
+            </p>
+          </div>
+
+          <div className="flex gap-2 items-center">
+            <Fork className="w-4 h-4" aria-hidden="true" />
+            <p className="text-sm text-[var(--gray)]">{isSpanish ? 'Forks' : 'Total forks'}</p>
+          </div>
+        </article>
+
+        <article>
+          <div>
+            <p className="text-4xl font-semibold">
+              {repositories?.length}
+            </p>
+          </div>
+          <div className="flex gap-2 items-center">
+            <GitRepository className="w-4 h-4" aria-hidden="true" />
+            <p className="text-sm text-[var(--gray)]">{isSpanish ? 'Repositorios' : 'Repositories'}</p>
+          </div>
+        </article>
+      </section>
+
+      <div className="my-6"></div>
+
+      <ProjectList />
+    </>
   )
 }
