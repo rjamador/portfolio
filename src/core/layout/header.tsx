@@ -5,7 +5,7 @@ import { useLanguage } from "../contexts/language.context";
 
 const GITHUB_PROFILE: string = 'https://github.com/Papudog'
 const LINKED_IN: string = 'https://www.linkedin.com/in/roberto-amador-1590a629b/'
-const CV: string = '/public/Roberto Amador - CV.pdf'
+const CV: string = '/Roberto Amador - CV.pdf'
 
 interface IconsHref {
   Icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element,
