@@ -54,25 +54,27 @@ export default function Navigation(): React.JSX.Element {
   }, [navigate, language])
 
   return (
-    <ul className="flex flex-col gap-[0.6rem]">
-      {routes[language].map(({ title, url, keymap }, index: number) => (
-        <li
-          data-item={`item-${index}`}
-          key={index}
-          className="flex items-center"
-          onMouseEnter={(): void => setHoveredItem(index)}
-          onMouseLeave={(): void => setHoveredItem(null)}
-        >
-          <div className={
-            `h-[1px] mr-4 transition-all duration-200 ease-in-out 
+    <nav>
+      <ul className="flex flex-col gap-[0.6rem]">
+        {routes[language].map(({ title, url, keymap }, index: number) => (
+          <li
+            data-item={`item-${index}`}
+            key={index}
+            className="flex items-center"
+            onMouseEnter={(): void => setHoveredItem(index)}
+            onMouseLeave={(): void => setHoveredItem(null)}
+          >
+            <div className={
+              `h-[1px] mr-4 transition-all duration-200 ease-in-out 
             ${location.pathname === url || hoveredItem === index ? "w-16 bg-[var(--accent)]" : "w-8 bg-[var(--gray)]"}`
-          }></div>
+            }></div>
 
-          <Link className={
-            `${location.pathname === url || hoveredItem === index ? "text-[var(--accent)]" : "text-[var(--gray)]"}`
-          } to={url}>{`[${keymap}] ${title}`}</Link>
-        </li>
-      ))}
-    </ul>
+            <Link className={
+              `${location.pathname === url || hoveredItem === index ? "text-[var(--accent)]" : "text-[var(--gray)]"}`
+            } to={url}>{`[${keymap}] ${title}`}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
   )
 }

@@ -15,11 +15,11 @@ interface IconsHref {
 const pageTranslation = {
   ['es']: {
     title: 'Ingeniero Frontend',
-    content: 'Construyendo sitios web funcionales con tecnologías modernas.'
+    content: 'Diseñando experiencias web modernas y funcionales.'
   },
   ['en']: {
     title: 'Frontend Engineer',
-    content: 'Building functional websites with modern stack.'
+    content: 'Designing modern, functional web experiences.'
   }
 }
 
@@ -34,29 +34,29 @@ export default function Header(): React.JSX.Element {
 
   return (
     <header className="lg:w-full lg:max-h-screen lg:top-0 lg:sticky lg:py-16 max-lg:gap-8 flex flex-col justify-between">
-      <div>
+      <section>
         <div>
-          <h1 className="lg:text-[3rem] font-bold">Roberto Amador</h1>
+          <h1 className="text-3xl md:text-4xl lg:text-[3rem] font-bold">Roberto Amador</h1>
           <div className="lg:w-[350px] flex justify-between items-center">
-            <h2 className="inline font-[300] my-[0.4rem]">{pageTranslation[language]['title']}</h2>
+            <h2 className="text-xl md:text-2xl lg:text-3xl inline font-light my-[0.4rem]">{pageTranslation[language]['title']}</h2>
             <LanguageSwitch />
           </div>
         </div>
 
-        <div className="lg:mt-8 lg:w-[20rem] mt-4 text-justify text-[var(--gray)]">
-          <p>{pageTranslation[language]['content']}</p>
+        <div className="lg:my-8 lg:w-[20rem] my-4 text-[var(--gray)]">
+          <p className="text-base lg:text-lg">{pageTranslation[language]['content']}</p>
         </div>
 
-        <div className="lg:mt-8 flex gap-4 mt-4">
+        <div className="flex gap-4 mt-4">
           {socialIcons.map(({ Icon, href }, index: number) => (
             <Icon
               onClick={() => window.open(href, '_blank')}
-              className="cursor-pointer hover:scale-[105%] transition-all ease-in-out duration-200"
+              className="cursor-pointer hover:scale-110 transition-transform"
               key={index}
             />
           ))}
         </div>
-      </div>
+      </section>
 
       <Navigation />
     </header>

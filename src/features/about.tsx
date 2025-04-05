@@ -45,13 +45,13 @@ export default function About(): React.JSX.Element {
       </div>
 
       <section className="mt-4" aria-labelledby="stack-heading">
-        <h2 id="stack-heading" className="text-2xl font-bold mb-6">
+        <h2 id="stack-heading" className="text-xl md:text-2xl lg:text-3xl font-bold mb-6">
           {isSpanish ? 'Stack de desarrollo' : 'Development stack'}
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 xl:grid-cols-3 gap-4">
           <Box>
-            <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">
+            <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-[var(--gray)] mb-3">
               {isSpanish ? 'Lenguajes' : 'Languages'}
             </h3>
             <div className="flex flex-wrap gap-6 items-center">
@@ -67,7 +67,7 @@ export default function About(): React.JSX.Element {
           </Box>
 
           <Box>
-            <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">
+            <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-[var(--gray)] mb-3">
               {isSpanish ? 'Librerías' : 'Libraries'}
             </h3>
             <div className="flex flex-wrap gap-6 items-center">
@@ -87,7 +87,7 @@ export default function About(): React.JSX.Element {
           </Box>
 
           <Box>
-            <h3 className="text-xl font-semibold text-[var(--gray)] mb-3">Frameworks</h3>
+            <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-[var(--gray)] mb-3">Frameworks</h3>
             <div className="flex flex-wrap gap-6 items-center">
               <figure className="flex flex-col items-center gap-2">
                 <Tailwindcss className="w-12 h-12 transition-transform hover:scale-110" aria-hidden="true" />

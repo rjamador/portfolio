@@ -27,32 +27,32 @@ export function ProjectList(): React.JSX.Element {
   const [hover, setHover] = useState<Hover>({ index: 0, hover: false })
 
   return (
-    <section className="grid grid-cols-1 gap-4 md:grid-cols-2">
+    <section className="grid grid-cols-1 gap-4 xl:grid-cols-2">
       {repositories?.map((repository: RepositoryDto, index: number): React.JSX.Element => (
         <article key={index}
           onMouseEnter={(): void => setHover({ index, hover: true })}
           onMouseLeave={(): void => setHover({ index, hover: false })}
-          className="hover:scale-105 transition-all duration-300"
+          className="hover:scale-105 transition-transform"
         >
           <Box onClick={() => window.open(repository.svn_url, '_blank')} padding={{ y: 'py-4' }}>
             <div className="flex flex-col gap-2">
               <div className="flex gap-2 items-center relative">
-                <h2 className="text-xl font-semibold">{repository.name}</h2>
-                <OpenInNew className={`w-4 h-4 ${isHoveringItem(hover, index) && 'scale-110 transition-all duration-600'}`} aria-hidden="true" />
+                <h2 className="text-lg lg:text-xl font-semibold">{repository.name}</h2>
+                <OpenInNew className={`w-4 h-4 transition-transform duration-600 ${isHoveringItem(hover, index) ? 'scale-110 fill-[var(--accent)]' : 'fill-white'}`} aria-hidden="true" />
               </div>
-              <div className="flex max-xl:flex-col-reverse gap-2 justify-between">
+              <div className="flex gap-2 justify-between">
                 <div className="flex gap-2 items-center">
                   <div className="w-2 h-2 rounded-full" style={{ backgroundColor: languageColors[repository.language] }} />
-                  <p>{repository.language}</p>
+                  <p className="text-sm text-[var(--gray)]">{repository.language}</p>
                 </div>
                 <div className="flex gap-2">
                   <div className="flex gap-1 items-center">
-                    <Star className="w-4 h-4" aria-hidden="true" />
-                    <p>{repository.stargazers_count}</p>
+                    <Star className={`w-4 h-4 transition-transform duration-600 ${isHoveringItem(hover, index) ? 'fill-yellow-400' : 'fill-white'}`} aria-hidden="true" />
+                    <p className="text-sm text-[var(--gray)]">{repository.stargazers_count}</p>
                   </div>
                   <div className="flex gap-1 items-center">
                     <Fork className="w-4 h-4" aria-hidden="true" />
-                    <p>{repository.forks_count}</p>
+                    <p className="text-sm text-[var(--gray)]">{repository.forks_count}</p>
                   </div>
                 </div>
               </div>

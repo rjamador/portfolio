@@ -6,12 +6,12 @@
         "position": "Front-End Development Leader",
         "startDate": "2023",
         "endDate": null,
-        "description": "In charge of the development of the web application and services for the new version of the national cancer tracking and prevention system, enhancing its functionality and performance.",
+        "description": "Responsible for developing the web application for the new version of the national cancer tracking and prevention system, improving its functionality, performance, and user interface with modern and intuitive design.",
         "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
       },
       {
         "place": "EXPEDOC",
-        "position": "Frontend Developer",
+        "position": "Front-End Developer",
         "startDate": "2022",
         "endDate": "2023",
         "description": "A web application designed for the Department of Education that manages the academic and professional records of the faculty at the Central American University.",
@@ -21,15 +21,15 @@
     "es": [
       {
         "place": "Fundación Movicáncer",
-        "position": "Líder de Desarrollo Front-End",
+        "position": "Líder de desarrollo Front-End",
         "startDate": "2023",
         "endDate": null,
-        "description": "Encargado del desarrollo de la aplicación web y servicios para la nueva versión del sistema nacional de seguimiento y prevención del cáncer, mejorando su funcionalidad y rendimiento.",
+        "description": "Responsable del desarrollo de la aplicación web para la nueva versión del sistema nacional de seguimiento y prevención del cáncer, mejorando su funcionalidad, rendimiento e interfaz de usuario con un diseño moderno e intuitivo.",
         "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
       },
       {
         "place": "EXPEDOC",
-        "position": "Desarrollador Frontend",
+        "position": "Desarrollador Front-End",
         "startDate": "2022",
         "endDate": "2023",
         "description": "Una aplicación web diseñada para el departamento de educación que gestiona los registros académicos y profesionales del profesorado de la Universidad Centroamericana.",
