@@ -1,12 +1,13 @@
 html,
 body {
   font-family: "Outfit", sans-serif;
-
-  @apply bg-white dark:bg-[var(--dark-background)];
+  background-color: var(--dark-background);
+  color-scheme: dark;
+  /* @apply bg-white dark:bg-[var(--dark-background)];
 
   @media (prefers-color-scheme: dark) {
-    color-scheme: dark;
-  }
+   
+  } */
 }
 
 *,
