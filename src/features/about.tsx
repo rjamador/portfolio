@@ -10,7 +10,8 @@ function currentAge(): number {
 
   let age: number = today.getFullYear() - birthday.getFullYear()
 
-  if (today < new Date(today.getFullYear(), birthday.getMonth(), birthday.getDate())) age--
+  if (today.getMonth() === birthday.getMonth() && today.getDate() < birthday.getDate()) age--
+
   return age
 }
 
