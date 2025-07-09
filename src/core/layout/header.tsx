@@ -1,11 +1,11 @@
 import LanguageSwitch from "../components/language-switch";
 import Navigation from "../components/navigation";
-import { Github, Linkedin, Pdf } from "../../assets/icons";
+import { Github, Linkedin } from "../../assets/icons";
 import { useLanguage } from "../contexts/language.context";
 
 const GITHUB_PROFILE: string = 'https://github.com/Papudog'
 const LINKED_IN: string = 'https://www.linkedin.com/in/roberto-amador-1590a629b/'
-const CV: string = '/Roberto Amador - CV.pdf'
+// const CV: string = '/Roberto Amador - CV.pdf'
 
 interface IconsHref {
   Icon: (props: React.SVGProps<SVGSVGElement>) => React.JSX.Element,
@@ -25,8 +25,8 @@ const pageTranslation = {
 
 const socialIcons: IconsHref[] = [
   { Icon: Github, href: GITHUB_PROFILE },
-  { Icon: Linkedin, href: LINKED_IN },
-  { Icon: Pdf, href: CV },
+  { Icon: Linkedin, href: LINKED_IN }
+  // { Icon: Pdf, href: CV },
 ]
 
 export default function Header(): React.JSX.Element {

@@ -71,7 +71,8 @@ export default function Navigation(): React.JSX.Element {
 
             <Link className={
               `${location.pathname === url || hoveredItem === index ? "text-[var(--accent)]" : "text-[var(--gray)]"}`
-            } to={url}>{`[${keymap}] ${title}`}</Link>
+            } to={url}>{`[${keymap}] ${title}`}
+            </Link>
           </li>
         ))}
       </ul>
