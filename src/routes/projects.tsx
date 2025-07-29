@@ -6,6 +6,7 @@ import Projects from '../features/projects'
 import PageTransition from '../core/components/page-transition'
 import { RepositoryProvider } from '../modules/projects/providers/repositories.provider'
 import { useEffect } from 'react'
+import { GITHUB_NICKNAME } from '../modules/projects/models/github.model'
 
 export const Route = createFileRoute('/projects')({
   component: () => (
@@ -22,7 +23,7 @@ function RouteComponent(): React.JSX.Element {
   const { data: repositories, isLoading } = useQuery({
     queryKey: ['repositories'],
     queryFn: async (): Promise<RepositoryDto[]> => {
-      const response: RepositoryDto[] = await fetchRepositories('Papudog')
+      const response: RepositoryDto[] = await fetchRepositories(GITHUB_NICKNAME)
       return response
         .filter((repository: RepositoryDto) => filteredRepositories.includes(repository.name))
         .map((repository: RepositoryDto) => {

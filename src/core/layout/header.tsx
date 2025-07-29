@@ -2,8 +2,9 @@ import LanguageSwitch from "../components/language-switch";
 import Navigation from "../components/navigation";
 import { Github, Linkedin } from "../../assets/icons";
 import { useLanguage } from "../contexts/language.context";
+import { GITHUB_NICKNAME } from "../../modules/projects/models/github.model";
 
-const GITHUB_PROFILE: string = 'https://github.com/Papudog'
+const GITHUB_PROFILE: string = `https://github.com/${GITHUB_NICKNAME}`
 const LINKED_IN: string = 'https://www.linkedin.com/in/roberto-amador-1590a629b/'
 // const CV: string = '/Roberto Amador - CV.pdf'
 

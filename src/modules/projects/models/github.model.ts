@@ -1,3 +1,5 @@
+export const GITHUB_NICKNAME: string = 'rjamador'
+
 export interface Repository {
   id: number
   node_id: string
