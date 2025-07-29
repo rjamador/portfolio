@@ -58,7 +58,6 @@ export default function Header(): React.JSX.Element {
           ))}
         </div>
       </section>
-
       <Navigation />
     </header>
   )
