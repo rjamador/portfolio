@@ -64,15 +64,9 @@ export default function Navigation(): React.JSX.Element {
             onMouseEnter={(): void => setHoveredItem(index)}
             onMouseLeave={(): void => setHoveredItem(null)}
           >
-            <div className={
-              `h-[1px] mr-4 transition-all duration-200 ease-in-out 
-            ${location.pathname === url || hoveredItem === index ? "w-16 bg-[var(--accent)]" : "w-8 bg-[var(--gray)]"}`
-            }></div>
+            <div className={`h-[1px] mr-4 transition-all duration-200 ease-in-out ${location.pathname === url || hoveredItem === index ? "w-16 bg-primary" : "w-8 bg-muted-foreground"}`}></div>
 
-            <Link className={
-              `${location.pathname === url || hoveredItem === index ? "text-[var(--accent)]" : "text-[var(--gray)]"}`
-            } to={url}>{`[${keymap}] ${title}`}
-            </Link>
+            <Link className={`${location.pathname === url || hoveredItem === index ? "text-primary" : "text-muted-foreground"}`} to={url}>{`[${keymap}] ${title}`}</Link>
           </li>
         ))}
       </ul>

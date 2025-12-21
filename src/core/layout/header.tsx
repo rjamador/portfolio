@@ -1,8 +1,9 @@
-import LanguageSwitch from "../components/language-switch";
+import LanguageSwitcher from "../../components/language-switcher";
 import Navigation from "../components/navigation";
 import { Github, Linkedin } from "../../assets/icons";
 import { useLanguage } from "../contexts/language.context";
 import { GITHUB_NICKNAME } from "../../modules/projects/models/github.model";
+import { ThemeSwitcher } from "@/components/ui/shadcn-io/theme-switcher";
 
 const GITHUB_PROFILE: string = `https://github.com/${GITHUB_NICKNAME}`
 const LINKED_IN: string = 'https://www.linkedin.com/in/roberto-amador-1590a629b/'
@@ -15,11 +16,11 @@ interface IconsHref {
 
 const pageTranslation = {
   ['es']: {
-    title: 'Ingeniero Frontend',
+    title: 'Ingeniero en Sistemas',
     content: 'Diseñando experiencias web modernas y funcionales.'
   },
   ['en']: {
-    title: 'Frontend Engineer',
+    title: 'Systems Engineer',
     content: 'Designing modern, functional web experiences.'
   }
 }
@@ -38,13 +39,16 @@ export default function Header(): React.JSX.Element {
       <section>
         <div>
           <h1 className="text-3xl md:text-4xl lg:text-[3rem] font-bold">Roberto Amador</h1>
-          <div className="lg:w-[350px] flex justify-between items-center">
+          <div className="lg:w-[350px] flex justify-between items-center gap-2">
             <h2 className="text-xl md:text-2xl lg:text-3xl inline font-light my-[0.4rem]">{pageTranslation[language]['title']}</h2>
-            <LanguageSwitch />
+            <div className="flex items-center gap-1">
+              <LanguageSwitcher />
+              <ThemeSwitcher />
+            </div>
           </div>
         </div>
 
-        <div className="lg:my-8 lg:w-[20rem] my-4 text-[var(--gray)]">
+        <div className="lg:my-8 lg:w-[20rem] my-4 text-muted-foreground">
           <p className="text-base lg:text-lg">{pageTranslation[language]['content']}</p>
         </div>
 

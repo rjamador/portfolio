@@ -17,8 +17,8 @@ export default function Projects(): React.JSX.Element {
           </div>
 
           <div className="flex gap-2 items-center">
-            <Star className="w-4 h-4 fill-white" aria-hidden="true" />
-            <p className="text-xs md:text-sm lg:text-base text-[var(--gray)]">
+            <Star className="w-4 h-4" aria-hidden="true" />
+            <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Estrellas' : 'Total stars'}
             </p>
           </div>
@@ -33,7 +33,7 @@ export default function Projects(): React.JSX.Element {
 
           <div className="flex gap-2 items-center">
             <Fork className="w-4 h-4" aria-hidden="true" />
-            <p className="text-xs md:text-sm lg:text-base text-[var(--gray)]">
+            <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Forks' : 'Total forks'}
             </p>
           </div>
@@ -47,7 +47,7 @@ export default function Projects(): React.JSX.Element {
           </div>
           <div className="flex gap-2 items-center">
             <GitRepository className="w-4 h-4" aria-hidden="true" />
-            <p className="text-xs md:text-sm lg:text-base text-[var(--gray)]">
+            <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Repositorios' : 'Repositories'}
             </p>
           </div>
