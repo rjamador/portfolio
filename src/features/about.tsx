@@ -22,22 +22,23 @@ export default function About(): React.JSX.Element {
 
   return (
     <article>
-      <header className="flex gap-6 mb-4">
-        <Avatar className="size-16 border-4 border-muted/20 shadow-xl">
+      <header className="flex items-center gap-6 mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
+        <Avatar className="size-16 border-2 border-muted shadow-sm">
           <AvatarImage src="/webp/github_profile.webp" alt="Profile picture" className="object-cover" />
-          <AvatarFallback className="bg-muted text-muted-foreground">JA</AvatarFallback>
+          <AvatarFallback>JA</AvatarFallback>
         </Avatar>
 
-        <div className="flex flex-col justify-around">
-          <div className="flex items-center gap-2">
-            <Cake className="fill-foreground" aria-hidden="true" />
-            <time dateTime="2003-04-09" className="text-muted-foreground">{`${isSpanish ? 'Abril' : 'April'}`} 9</time>
-            <div className="text-muted-foreground" aria-hidden="true">|</div>
-            <p className="text-muted-foreground">{`${currentAge()} ${isSpanish ? 'años' : 'years old'}`}</p>
+        <div className="flex flex-col gap-1.5">
+          <div className="flex items-center gap-2.5 text-foreground/90 font-medium">
+            <Cake className="size-5 fill-foreground" aria-hidden="true" />
+            <span>{currentAge()} {isSpanish ? 'años' : 'years old'}</span>
+            <span className="text-muted-foreground/40" aria-hidden="true">•</span>
+            <span className="text-muted-foreground">09 {isSpanish ? 'Abril' : 'April'}</span>
           </div>
-          <div className="flex items-center gap-2">
-            <Location className="fill-foreground" aria-hidden="true" />
-            <address className="not-italic">Managua, Nicaragua</address>
+
+          <div className="flex items-center gap-2.5 text-muted-foreground">
+            <Location className="size-5 fill-foreground" aria-hidden="true" />
+            <span>Managua, Nicaragua</span>
           </div>
         </div>
       </header>
