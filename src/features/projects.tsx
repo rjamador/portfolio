@@ -17,7 +17,7 @@ export default function Projects(): React.JSX.Element {
           </div>
 
           <div className="flex gap-2 items-center">
-            <Star className="w-4 h-4" aria-hidden="true" />
+            <Star className="w-4 h-4 fill-foreground" aria-hidden="true" />
             <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Estrellas' : 'Total stars'}
             </p>
@@ -32,7 +32,7 @@ export default function Projects(): React.JSX.Element {
           </div>
 
           <div className="flex gap-2 items-center">
-            <Fork className="w-4 h-4" aria-hidden="true" />
+            <Fork className="w-4 h-4 fill-foreground" aria-hidden="true" />
             <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Forks' : 'Total forks'}
             </p>
@@ -46,7 +46,7 @@ export default function Projects(): React.JSX.Element {
             </p>
           </div>
           <div className="flex gap-2 items-center">
-            <GitRepository className="w-4 h-4" aria-hidden="true" />
+            <GitRepository className="w-4 h-4 fill-foreground" aria-hidden="true" />
             <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Repositorios' : 'Repositories'}
             </p>

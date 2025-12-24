@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge"
-import Chip from "../components/chip"
 import type { Experience } from "../modules/experience"
 
 interface ExperienceProps {
