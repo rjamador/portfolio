@@ -26,7 +26,7 @@ export function ProjectList(): React.JSX.Element {
           key={index}
           variant="outline"
           onClick={() => window.open(repository.svn_url, '_blank')}
-          className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 relative overflow-hidden bg-card text-card-foreground"
+          className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 relative overflow-hidden bg-card text-card-foreground rounded-lg"
         >
           <ItemHeader>
             <ItemTitle className="text-lg lg:text-xl font-semibold group-hover:text-primary transition-colors">
@@ -54,11 +54,11 @@ export function ProjectList(): React.JSX.Element {
                   className="w-4 h-4 transition-all duration-300 fill-muted-foreground group-hover:fill-yellow-400"
                   aria-hidden="true"
                 />
-                <p className="text-sm text-muted-foreground">{repository.stargazers_count}</p>
+                <p className="text-sm text-muted-foreground group-hover:text-yellow-400 group-hover:scale-110">{repository.stargazers_count}</p>
               </div>
               <div className="flex gap-1.5 items-center">
-                <Fork className="w-4 h-4 fill-muted-foreground" aria-hidden="true" />
-                <p className="text-sm text-muted-foreground">{repository.forks_count}</p>
+                <Fork className="w-4 h-4 fill-muted-foreground group-hover:fill-blue-400 group-hover:scale-110" aria-hidden="true" />
+                <p className="text-sm text-muted-foreground group-hover:text-blue-400 group-hover:scale-110">{repository.forks_count}</p>
               </div>
             </div>
           </ItemFooter>

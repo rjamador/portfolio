@@ -56,7 +56,7 @@ export default function Header(): React.JSX.Element {
           {socialIcons.map(({ Icon, href }, index: number) => (
             <Icon
               onClick={() => window.open(href, '_blank')}
-              className="cursor-pointer hover:scale-110 transition-transform w-6 h-6"
+              className="cursor-pointer hover:scale-110 transition-transform w-6 h-6 text-muted-foreground hover:text-foreground"
               key={index}
             />
           ))}

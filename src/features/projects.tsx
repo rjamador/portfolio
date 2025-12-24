@@ -1,3 +1,4 @@
+import { Separator } from "@/components/ui/separator";
 import { Fork, GitRepository, Star } from "../assets/icons";
 import { useLanguage } from "../core/contexts/language.context";
 import { ProjectList, useRepositories } from "../modules/projects";
@@ -17,7 +18,7 @@ export default function Projects(): React.JSX.Element {
           </div>
 
           <div className="flex gap-2 items-center">
-            <Star className="w-4 h-4 fill-foreground" aria-hidden="true" />
+            <Star className="w-4 h-4 fill-amber-400 text-amber-400" aria-hidden="true" />
             <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Estrellas' : 'Total stars'}
             </p>
@@ -32,7 +33,7 @@ export default function Projects(): React.JSX.Element {
           </div>
 
           <div className="flex gap-2 items-center">
-            <Fork className="w-4 h-4 fill-foreground" aria-hidden="true" />
+            <Fork className="w-4 h-4 fill-blue-400" aria-hidden="true" />
             <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Forks' : 'Total forks'}
             </p>
@@ -46,7 +47,7 @@ export default function Projects(): React.JSX.Element {
             </p>
           </div>
           <div className="flex gap-2 items-center">
-            <GitRepository className="w-4 h-4 fill-foreground" aria-hidden="true" />
+            <GitRepository className="w-4 h-4 fill-emerald-400 text-emerald-400" aria-hidden="true" />
             <p className="text-xs md:text-sm lg:text-base text-muted-foreground">
               {isSpanish ? 'Repositorios' : 'Repositories'}
             </p>
@@ -54,7 +55,9 @@ export default function Projects(): React.JSX.Element {
         </article>
       </section>
 
-      <div className="my-6"></div>
+      <div className="my-6">
+        <Separator />
+      </div>
 
       <ProjectList />
     </>

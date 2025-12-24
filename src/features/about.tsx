@@ -22,7 +22,7 @@ export default function About(): React.JSX.Element {
 
   return (
     <article>
-      <header className="flex items-center gap-6 mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
+      <header className="flex items-center gap-4 mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
         <Avatar className="size-16 border-2 border-muted shadow-sm">
           <AvatarImage src="/webp/github_profile.webp" alt="Profile picture" className="object-cover" />
           <AvatarFallback>RA</AvatarFallback>
@@ -30,14 +30,14 @@ export default function About(): React.JSX.Element {
 
         <div className="flex flex-col gap-1.5">
           <div className="flex items-center gap-2.5 text-foreground/90 font-medium">
-            <Cake className="size-5 fill-foreground" aria-hidden="true" />
+            <Cake className="fill-pink-400 size-5" aria-hidden="true" />
             <span>{currentAge()} {isSpanish ? 'años' : 'years old'}</span>
             <span className="text-muted-foreground/40" aria-hidden="true">•</span>
             <span className="text-muted-foreground">09 {isSpanish ? 'Abril' : 'April'}</span>
           </div>
 
           <div className="flex items-center gap-2.5 text-muted-foreground">
-            <Location className="size-5 fill-foreground" aria-hidden="true" />
+            <Location className="fill-red-400 size-5" aria-hidden="true" />
             <span>Managua, Nicaragua</span>
           </div>
         </div>
