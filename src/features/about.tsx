@@ -25,7 +25,7 @@ export default function About(): React.JSX.Element {
       <header className="flex items-center gap-6 mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
         <Avatar className="size-16 border-2 border-muted shadow-sm">
           <AvatarImage src="/webp/github_profile.webp" alt="Profile picture" className="object-cover" />
-          <AvatarFallback>JA</AvatarFallback>
+          <AvatarFallback>RA</AvatarFallback>
         </Avatar>
 
         <div className="flex flex-col gap-1.5">

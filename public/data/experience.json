@@ -7,7 +7,12 @@
         "startDate": "2023",
         "endDate": null,
         "description": "Responsible for developing the web application for the new version of the national cancer tracking and prevention system, improving its functionality, performance, and user interface with modern and intuitive design.",
-        "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
+        "stack": [
+          "Angular",
+          "Tailwind",
+          "Oracle SQL",
+          "Spring Boot"
+        ]
       },
       {
         "place": "EXPEDOC",
@@ -15,7 +20,10 @@
         "startDate": "2022",
         "endDate": "2023",
         "description": "A web application designed for the Department of Education that manages the academic and professional records of the faculty at the Central American University.",
-        "stack": ["ASP.NET", "Microsoft SQL"]
+        "stack": [
+          "ASP.NET",
+          "Microsoft SQL"
+        ]
       }
     ],
     "es": [
@@ -25,7 +33,12 @@
         "startDate": "2023",
         "endDate": null,
         "description": "Responsable del desarrollo de la aplicación web para la nueva versión del sistema nacional de seguimiento y prevención del cáncer, mejorando su funcionalidad, rendimiento e interfaz de usuario con un diseño moderno e intuitivo.",
-        "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
+        "stack": [
+          "Angular",
+          "Tailwind",
+          "Oracle SQL",
+          "Spring Boot"
+        ]
       },
       {
         "place": "EXPEDOC",
@@ -33,7 +46,10 @@
         "startDate": "2022",
         "endDate": "2023",
         "description": "Una aplicación web diseñada para el departamento de educación que gestiona los registros académicos y profesionales del profesorado de la Universidad Centroamericana.",
-        "stack": ["ASP.NET", "Microsoft SQL"]
+        "stack": [
+          "ASP.NET",
+          "Microsoft SQL"
+        ]
       }
     ]
   }
