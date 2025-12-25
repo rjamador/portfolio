@@ -26,7 +26,7 @@ export function ProjectList(): React.JSX.Element {
           key={index}
           variant="outline"
           onClick={() => window.open(repository.svn_url, '_blank')}
-          className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 relative overflow-hidden bg-card text-card-foreground rounded-lg"
+          className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 relative overflow-hidden text-card-foreground rounded-lg"
         >
           <ItemHeader>
             <ItemTitle className="text-lg lg:text-xl font-semibold group-hover:text-primary transition-colors">

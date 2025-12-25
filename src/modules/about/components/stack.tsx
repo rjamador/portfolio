@@ -39,7 +39,7 @@ export default function Stack(): React.JSX.Element {
           </TabsList>
 
           <TabsContent value="languages" className="animate-in fade-in-50 slide-in-from-bottom-5 duration-500">
-            <Item variant="outline" className="p-8 md:p-10 justify-center bg-card text-card-foreground rounded-lg">
+            <Item variant="outline" className="p-8 md:p-10 justify-center text-card-foreground rounded-lg">
               <ItemContent className="flex-row flex-wrap justify-center gap-10 md:gap-16 w-full">
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
                   <TypescriptOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
@@ -58,7 +58,7 @@ export default function Stack(): React.JSX.Element {
           </TabsContent>
 
           <TabsContent value="libraries" className="animate-in fade-in-50 slide-in-from-bottom-5 duration-500">
-            <Item variant="outline" className="p-8 md:p-12 justify-center bg-card text-card-foreground shadow-sm">
+            <Item variant="outline" className="p-8 md:p-12 justify-center text-card-foreground shadow-sm">
               <ItemContent className="flex-row flex-wrap justify-center gap-10 md:gap-16 w-full">
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
                   <ReactOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
@@ -77,7 +77,7 @@ export default function Stack(): React.JSX.Element {
           </TabsContent>
 
           <TabsContent value="frameworks" className="animate-in fade-in-50 slide-in-from-bottom-5 duration-500">
-            <Item variant="outline" className="p-8 md:p-12 justify-center bg-card text-card-foreground shadow-sm">
+            <Item variant="outline" className="p-8 md:p-12 justify-center text-card-foreground shadow-sm">
               <ItemContent className="flex-row flex-wrap justify-center gap-10 md:gap-16 w-full">
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
                   <TailwindcssOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
