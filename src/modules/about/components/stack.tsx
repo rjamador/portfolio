@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Item, ItemContent } from "@/components/ui/item";
 import { useLanguage } from "@/core/contexts/language.context";
+import { useMediaQuery } from "@/core/hooks/use-media-query";
 
 import TailwindcssOriginal from "devicons-react/icons/tailwindcssOriginal";
 import DotnetcoreOriginal from "devicons-react/icons/DotNetPlain";
@@ -14,6 +15,8 @@ import MssqlOriginal from "devicons-react/icons/MicrosoftsqlserverOriginal";
 
 export default function Stack(): React.JSX.Element {
   const { isSpanish } = useLanguage()
+  const isDesktop = useMediaQuery("(min-width: 768px)")
+  const iconSize = isDesktop ? 64 : 48
 
   return (
     <section className="mt-8" aria-labelledby="stack-heading">
@@ -39,15 +42,15 @@ export default function Stack(): React.JSX.Element {
             <Item variant="outline" className="p-8 md:p-10 justify-center bg-card text-card-foreground rounded-lg">
               <ItemContent className="flex-row flex-wrap justify-center gap-10 md:gap-16 w-full">
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <TypescriptOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <TypescriptOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">TypeScript</figcaption>
                 </figure>
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <PostgresqlOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <PostgresqlOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">PostgreSQL</figcaption>
                 </figure>
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <MssqlOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <MssqlOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">MSSQL</figcaption>
                 </figure>
               </ItemContent>
@@ -58,15 +61,15 @@ export default function Stack(): React.JSX.Element {
             <Item variant="outline" className="p-8 md:p-12 justify-center bg-card text-card-foreground shadow-sm">
               <ItemContent className="flex-row flex-wrap justify-center gap-10 md:gap-16 w-full">
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <ReactOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <ReactOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">React</figcaption>
                 </figure>
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <RxjsOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <RxjsOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">RxJS</figcaption>
                 </figure>
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <AngularMaterialOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <AngularMaterialOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">Material</figcaption>
                 </figure>
               </ItemContent>
@@ -77,15 +80,15 @@ export default function Stack(): React.JSX.Element {
             <Item variant="outline" className="p-8 md:p-12 justify-center bg-card text-card-foreground shadow-sm">
               <ItemContent className="flex-row flex-wrap justify-center gap-10 md:gap-16 w-full">
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <TailwindcssOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <TailwindcssOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">Tailwind</figcaption>
                 </figure>
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <DotnetcoreOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <DotnetcoreOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">.NET</figcaption>
                 </figure>
                 <figure className="flex flex-col items-center gap-4 group cursor-pointer">
-                  <AngularOriginal size={64} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
+                  <AngularOriginal size={iconSize} className="transition-all duration-300 group-hover:scale-110 drop-shadow-sm group-hover:drop-shadow-lg" />
                   <figcaption className="text-sm text-muted-foreground font-medium group-hover:text-primary transition-colors">Angular</figcaption>
                 </figure>
               </ItemContent>
