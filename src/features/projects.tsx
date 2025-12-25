@@ -1,14 +1,16 @@
 import { Separator } from "@/components/ui/separator";
 import { Fork, GitRepository, Star } from "../assets/icons";
 import { useLanguage } from "../core/contexts/language.context";
-import { ProjectList, useRepositories } from "../modules/projects";
+import { ProjectList } from "../modules/projects";
+import { useRepository } from "@/core/hooks/use-repository";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function Projects(): React.JSX.Element {
-  const { repositories } = useRepositories()
   const { isSpanish } = useLanguage()
+  const { data: repositories, isLoading } = useRepository()
 
   return (
-    <>
+    <div className="my-auto">
       <section className="w-full flex gap-6 items-center flex-wrap max-md:gap-2 my-4">
         <article className="flex flex-col justify-center">
           <div>
@@ -59,7 +61,16 @@ export default function Projects(): React.JSX.Element {
         <Separator />
       </div>
 
-      <ProjectList />
-    </>
+      {isLoading ? (
+        <div className="h-[50vh] w-full flex items-center justify-center">
+          <div className="flex flex-col items-center gap-2">
+            <Spinner className="size-12" />
+            <p className="text-muted-foreground text-sm">Cargando proyectos...</p>
+          </div>
+        </div>
+      ) : (
+        <ProjectList repositories={repositories} />
+      )}
+    </div>
   )
 }

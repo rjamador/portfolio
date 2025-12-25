@@ -1,9 +1,9 @@
 import { useLanguage } from "../core/contexts/language.context";
-import useTranslation from "../core/hooks/useTranslations";
 import { Cake, Location } from "../assets/icons";
 import { aboutTranslations } from "../modules/about";
 import Stack from "@/modules/about/components/stack";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import useTranslation from "@/core/hooks/use-translations";
 
 function currentAge(): number {
   const today: Date = new Date()
@@ -24,7 +24,7 @@ export default function About(): React.JSX.Element {
     <article>
       <header className="flex items-center gap-4 mb-8 animate-in fade-in slide-in-from-top-4 duration-700">
         <Avatar className="size-16 border-2 border-muted shadow-sm">
-          <AvatarImage src="/webp/github_profile.webp" alt="Profile picture" className="object-cover" />
+          <AvatarImage src="/webp/clippy.webp" alt="Profile picture" className="object-cover" />
           <AvatarFallback>RA</AvatarFallback>
         </Avatar>
 

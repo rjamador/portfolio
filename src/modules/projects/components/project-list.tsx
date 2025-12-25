@@ -1,8 +1,9 @@
 import { OpenInNew } from "../../../assets/icons/open-new.icon";
-import { useRepositories } from "../context/repositories.context";
 import { RepositoryDto } from "../models/github.model";
 import { Fork, Star } from "../../../assets/icons";
 import { Item, ItemActions, ItemFooter, ItemHeader, ItemTitle } from "@/components/ui/item";
+import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
+import { PackageOpen } from "lucide-react";
 
 const languageColors: Record<string, string> = {
   ['TypeScript']: '#2b7489',
@@ -16,8 +17,26 @@ const getLanguageColor = (language: string): string => {
   return languageColors[language] ?? '#ccc'
 }
 
-export function ProjectList(): React.JSX.Element {
-  const { repositories } = useRepositories()
+interface ProjectListProps {
+  repositories?: RepositoryDto[]
+}
+
+export function ProjectList({ repositories = [] }: ProjectListProps): React.JSX.Element {
+  if (!repositories || repositories.length === 0) {
+    return (
+      <Empty className="my-10 border-2 border-dashed border-muted-foreground rounded-lg">
+        <EmptyMedia>
+          <PackageOpen className="size-10 text-muted-foreground" />
+        </EmptyMedia>
+        <EmptyHeader>
+          <EmptyTitle>No se encontraron proyectos</EmptyTitle>
+          <EmptyDescription>
+            No se pudieron cargar los proyectos o no hay ninguno disponible en el momento.
+          </EmptyDescription>
+        </EmptyHeader>
+      </Empty>
+    )
+  }
 
   return (
     <section className="grid grid-cols-1 gap-4 xl:grid-cols-2">
@@ -26,7 +45,7 @@ export function ProjectList(): React.JSX.Element {
           key={index}
           variant="outline"
           onClick={() => window.open(repository.svn_url, '_blank')}
-          className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 relative overflow-hidden text-card-foreground rounded-lg"
+          className="group cursor-pointer hover:shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 relative overflow-hidden bg-card text-card-foreground rounded-lg"
         >
           <ItemHeader>
             <ItemTitle className="text-lg lg:text-xl font-semibold group-hover:text-primary transition-colors">
