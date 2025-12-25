@@ -4,6 +4,7 @@ import { Fork, Star } from "../../../assets/icons";
 import { Item, ItemActions, ItemFooter, ItemHeader, ItemTitle } from "@/components/ui/item";
 import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty";
 import { PackageOpen } from "lucide-react";
+import { useLanguage } from "@/core/contexts/language.context";
 
 const languageColors: Record<string, string> = {
   ['TypeScript']: '#2b7489',
@@ -22,6 +23,8 @@ interface ProjectListProps {
 }
 
 export function ProjectList({ repositories = [] }: ProjectListProps): React.JSX.Element {
+  const { isSpanish } = useLanguage()
+
   if (!repositories || repositories.length === 0) {
     return (
       <div className="flex-1 flex flex-col items-center justify-center">
@@ -30,9 +33,11 @@ export function ProjectList({ repositories = [] }: ProjectListProps): React.JSX.
             <PackageOpen className="size-8 md:size-10 text-muted-foreground" />
           </EmptyMedia>
           <EmptyHeader>
-            <EmptyTitle>No se encontraron proyectos</EmptyTitle>
+            <EmptyTitle>{isSpanish ? 'No se encontraron proyectos' : 'No projects found'}</EmptyTitle>
             <EmptyDescription>
-              No se pudieron cargar los proyectos o no hay ninguno disponible en el momento.
+              {isSpanish ?
+                'No se pudieron cargar los proyectos o no hay ninguno disponible en el momento.' :
+                'No projects could be loaded or none are available at the moment.'}
             </EmptyDescription>
           </EmptyHeader>
         </Empty>

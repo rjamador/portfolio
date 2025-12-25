@@ -4,7 +4,7 @@ import { useLanguage } from "../core/contexts/language.context"
 import { Languages } from "lucide-react"
 
 export default function LanguageSwitcher(): React.JSX.Element {
-  const { setLanguage } = useLanguage()
+  const { setLanguage, isSpanish } = useLanguage()
 
   return (
     <DropdownMenu>
@@ -15,11 +15,8 @@ export default function LanguageSwitcher(): React.JSX.Element {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-[150px]" align="center">
-        <DropdownMenuItem onClick={() => setLanguage('en')}>
-          <span>English</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setLanguage('es')}>
-          <span>Español</span>
+        <DropdownMenuItem onClick={() => setLanguage(isSpanish ? 'en' : 'es')}>
+          <span>{isSpanish ? 'English' : 'Español'}</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

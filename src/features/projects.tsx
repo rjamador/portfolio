@@ -65,7 +65,7 @@ export default function Projects(): React.JSX.Element {
         <div className="flex-1 flex flex-col items-center justify-center">
           <div className="flex flex-col items-center gap-2">
             <Spinner className="size-12" />
-            <p className="text-muted-foreground text-sm">Cargando proyectos...</p>
+            <p className="text-muted-foreground text-sm">{isSpanish ? 'Cargando proyectos...' : 'Loading projects...'}</p>
           </div>
         </div>
       ) : (
