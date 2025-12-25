@@ -5,11 +5,9 @@ import { fetchExperience } from '../modules/experience'
 import type { Experience as ExperienceType } from '../modules/experience'
 import Experience from '../features/experience'
 import PageTransition from '../core/components/page-transition'
-import { Spinner } from '@/components/ui/spinner'
 
 export const Route = createFileRoute('/experience')({
-  component: RouteComponent,
-  pendingComponent: () => <Spinner className='size-8' />
+  component: RouteComponent
 })
 
 function RouteComponent(): React.JSX.Element {
