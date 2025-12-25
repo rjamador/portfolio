@@ -5,17 +5,25 @@
         "place": "Fundación Movicáncer",
         "position": "Front-End Development Leader",
         "startDate": "2023",
-        "endDate": null,
+        "endDate": "2025",
         "description": "Responsible for developing the web application for the new version of the national cancer tracking and prevention system, improving its functionality, performance, and user interface with modern and intuitive design.",
-        "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
+        "stack": [
+          "Angular",
+          "Tailwind",
+          "Oracle SQL",
+          "Spring Boot"
+        ]
       },
       {
-        "place": "EXPEDOC",
+        "place": "Universidad Centroamericana",
         "position": "Front-End Developer",
         "startDate": "2022",
         "endDate": "2023",
-        "description": "A web application designed for the Department of Education that manages the academic and professional records of the faculty at the Central American University.",
-        "stack": ["ASP.NET", "Microsoft SQL"]
+        "description": "Member of the development team for EXPEDOC, a web application created for the Department of Education at Universidad Centroamericana, designed to provide comprehensive management of the faculty’s academic and professional records.",
+        "stack": [
+          "ASP.NET",
+          "Microsoft SQL"
+        ]
       }
     ],
     "es": [
@@ -23,17 +31,25 @@
         "place": "Fundación Movicáncer",
         "position": "Líder de desarrollo Front-End",
         "startDate": "2023",
-        "endDate": null,
+        "endDate": "2025",
         "description": "Responsable del desarrollo de la aplicación web para la nueva versión del sistema nacional de seguimiento y prevención del cáncer, mejorando su funcionalidad, rendimiento e interfaz de usuario con un diseño moderno e intuitivo.",
-        "stack": ["Angular", "Tailwind", "Oracle SQL", "Spring Boot"]
+        "stack": [
+          "Angular",
+          "Tailwind",
+          "Oracle SQL",
+          "Spring Boot"
+        ]
       },
       {
-        "place": "EXPEDOC",
+        "place": "Universidad Centroamericana",
         "position": "Desarrollador Front-End",
         "startDate": "2022",
         "endDate": "2023",
-        "description": "Una aplicación web diseñada para el departamento de educación que gestiona los registros académicos y profesionales del profesorado de la Universidad Centroamericana.",
-        "stack": ["ASP.NET", "Microsoft SQL"]
+        "description": "Integrante del equipo de desarrollo de EXPEDOC, una aplicación web creada para el Departamento de Educación de la Universidad Centroamericana, destinada a la gestión integral de los registros académicos y profesionales del profesorado.",
+        "stack": [
+          "ASP.NET",
+          "Microsoft SQL"
+        ]
       }
     ]
   }

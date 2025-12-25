@@ -1,15 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useLanguage } from '../core/contexts/language.context'
 import { useQuery } from '@tanstack/react-query'
-import Loading from '../components/loading'
 import { fetchExperience } from '../modules/experience'
 import type { Experience as ExperienceType } from '../modules/experience'
 import Experience from '../features/experience'
 import PageTransition from '../core/components/page-transition'
 
 export const Route = createFileRoute('/experience')({
-  component: RouteComponent,
-  pendingComponent: () => <Loading />
+  component: RouteComponent
 })
 
 function RouteComponent(): React.JSX.Element {

@@ -8,7 +8,7 @@ export function Fork(props: React.SVGProps<SVGSVGElement>) {
       {...props}
     >
       <path
-        fill="none"
+        fill="#currentColor"
         stroke="currentColor"
         strokeLinecap="round"
         strokeLinejoin="round"
