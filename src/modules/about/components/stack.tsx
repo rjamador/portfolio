@@ -3,14 +3,14 @@ import { Item, ItemContent } from "@/components/ui/item";
 import { useLanguage } from "@/core/contexts/language.context";
 import { useMediaQuery } from "@/core/hooks/use-media-query";
 
-import TailwindcssOriginal from "devicons-react/icons/tailwindcssOriginal";
+import TailwindcssOriginal from "devicons-react/icons/TailwindcssOriginal";
 import DotnetcoreOriginal from "devicons-react/icons/DotNetPlain";
 import AngularOriginal from "devicons-react/icons/AngularOriginal";
 import ReactOriginal from "devicons-react/icons/ReactOriginal";
 import RxjsOriginal from "devicons-react/icons/RxjsOriginal";
 import TypescriptOriginal from "devicons-react/icons/TypescriptOriginal";
 import PostgresqlOriginal from "devicons-react/icons/PostgresqlOriginal";
-import AngularMaterialOriginal from "devicons-react/icons/AngularMaterialOriginal";
+import AngularMaterialOriginal from "devicons-react/icons/AngularmaterialOriginal";
 import MssqlOriginal from "devicons-react/icons/MicrosoftsqlserverOriginal";
 
 export default function Stack(): React.JSX.Element {
